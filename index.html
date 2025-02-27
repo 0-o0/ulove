@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <title>o❤️o</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* background-image: url('img/bg.png'); */
+            font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+        }
+        #container {
+            position: absolute;
+            z-index: 0;
+        }
+        canvas {
+            background: transparent;
+            z-index: 1;
+        }
+        #text-content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            white-space: pre-wrap;
+            font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            overflow-y: auto;
+            display: none;
+            z-index: 10;
+        }
+        #text-content:focus {
+            outline: none;
+            border: 2px solid #ff69b4;
+        }
+        .hint {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #ff69b4a9;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            pointer-events: none;
+            transition: opacity 1s;
+            opacity: 1;
+            z-index: 5;
+        }
+        .hint.fade {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-slide" class="slide" data-weather="rain"></div>
+    <canvas width="1920" height="1017" id="container"></canvas>
+    <canvas id="canvas"></canvas>
+    <div id="text-content" contenteditable="true"></div>
+    <div class="hint" id="hint">双击屏幕编辑文字</div>
+    <script src="script.js"></script>
+    <script src="index.min.js"></script>
+</body>
+</html>
